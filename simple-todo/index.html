@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple Todo</title>
+  </head>
+  <body>
+    <main>
+      <div class="title">
+        <h1>Simple Todo App</h1>
+        <button onclick="location.href = '../';" class="osv">
+          Open Advanced Version
+        </button>
+      </div>
+      <div class="inputs">
+        <form id="form" action="">
+          <input
+            type="text"
+            name="new-todo"
+            id="new-todo"
+            placeholder="Add New Todo"
+          />
+          <button type="submit">Add Todo</button>
+          <p id="err" class="err"></p>
+        </form>
+        <input
+          class="search"
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search"
+        />
+        <div id="menu-result" class="menu__result"></div>
+      </div>
+      <div id="todos" class="todos"></div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

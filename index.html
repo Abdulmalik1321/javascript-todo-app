@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <section id="menu-section" class="menu">
+      <div class="menu__title">
+        <h2>Menu</h2>
+        <div>
+          <button onclick="location.href = './simple-todo';" class="osv">
+            Open Simple Version
+          </button>
+          <button id="menu-btn">☰</button>
+        </div>
+      </div>
+
+      <div class="menu__search">
+        <input
+          type="search"
+          name=""
+          id="search"
+          placeholder="Search"
+          aria-label="search bar"
+        />
+        <div id="menu-result" class="menu__result"></div>
+      </div>
+
+      <div id="timeline" class="timeline">
+        <div onclick="selectSection(0)" class="timeline__div">
+          <div>
+            <img src="./src/assets/imgs/icons/upcoming.png" alt="upcoming" />
+            <span>Upcoming</span>
+          </div>
+          <span id="upcoming-count">0</span>
+        </div>
+
+        <div onclick="selectSection(1)" class="timeline__div">
+          <div>
+            <img src="./src/assets/imgs/icons/star.png" alt="upcoming" />
+            <span>Today</span>
+          </div>
+          <span id="today-count">0</span>
+        </div>
+
+        <div onclick="selectSection(2)" class="timeline__div">
+          <div>
+            <img src="./src/assets/imgs/icons/today.png" alt="upcoming" />
+            <span>Done</span>
+          </div>
+          <span id="done-count">0</span>
+        </div>
+
+        <div onclick="selectSection(3)" class="timeline__div">
+          <div>
+            <img src="./src/assets/imgs/icons/time.png" alt="upcoming" />
+            <span>Overdue</span>
+          </div>
+          <span id="overdue-count">0</span>
+        </div>
+
+        <div onclick="selectSection(4)" class="timeline__div">
+          <div>
+            <img src="./src/assets/imgs/icons/sticky-note.png" alt="upcoming" />
+            <span>Sticky Nots</span>
+          </div>
+          <span id="notes-count">10</span>
+        </div>
+      </div>
+    </section>
+
+    <main id="main" class="main">
+      <div id="main-wrap">
+        <div class="main__title">
+          <h1 id="title-tag">Today</h1>
+          <button onclick="editSection('new')" class="main__addTask">
+            <span>+</span>
+            Add New Task
+          </button>
+        </div>
+
+        <div id="actions" class="actions">
+          <button id="deleteAll">
+            <img
+              src="./src/assets/imgs/icons/delete.png"
+              alt="delete tasks"
+            /><span>Delete</span>
+          </button>
+          <button id="markDone">
+            <img
+              src="./src/assets/imgs/icons/today.png"
+              alt="delete tasks"
+            /><span id="marker">Mark As Done</span>
+          </button>
+          <span><span id="selected">[0]</span> Selected</span>
+        </div>
+
+        <div id="main-allTasks" class="main__allTasks"></div>
+      </div>
+      <section class="edit">
+        <div class="edit__title">
+          <h2 id="edit-title">Task:</h2>
+          <img
+            onclick="closeEditSection()"
+            src="./src/assets/imgs/icons/close.png"
+            alt=""
+          />
+        </div>
+        <form class="edit__input">
+          <div>
+            <label for="task-name">Task Name:</label>
+            <input type="text" id="task-name" name="task-name" />
+          </div>
+          <div>
+            <label for="task-description">Description:</label>
+            <textarea
+              name="task-description"
+              id="task-description"
+              cols="30"
+              rows="10"
+              placeholder=""
+            ></textarea>
+          </div>
+          <div>
+            <label for="task-date">Due Date:</label>
+            <input type="date" id="task-date" name="task-date" />
+          </div>
+        </form>
+        <p id="err" class="err">test</p>
+        <div id="edit-controls" class="edit__controls">
+          <button>Delete Task</button>
+          <button onclick="saveTask()">Save Task</button>
+        </div>
+      </section>
+      <div id="stickyNotes--base" class="stickyNotes--base">
+        <div>
+          <img
+            id="delete-note"
+            src="./src/assets/imgs/icons/delete.png"
+            alt=""
+          />
+          <img id="close-note" src="./src/assets/imgs/icons/close.png" alt="" />
+        </div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

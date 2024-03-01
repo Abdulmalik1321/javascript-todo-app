@@ -1,0 +1,802 @@
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+body {
+  display: flex;
+  justify-content: left;
+  font-family: elion, Helvetica, "Helvetica Neue", Arial;
+  margin: 0;
+  background-color: whitesmoke;
+  font-size: 18px;
+  color: #444444;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.color--green {
+  color: whitesmoke;
+  background-color: green;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-right: 25px;
+}
+.color--yellow {
+  color: whitesmoke;
+  background-color: #f3cf34;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-right: 25px;
+}
+.color--red {
+  color: whitesmoke;
+  background-color: red;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-right: 25px;
+}
+.color--gray {
+  color: whitesmoke;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-right: 25px;
+}
+
+input {
+  background-color: #dcd6d5;
+  width: 100%;
+  height: 25px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 3px;
+  color: #444444;
+}
+textarea {
+  background-color: #dcd6d5;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 3px;
+  color: #444444;
+}
+button {
+  background-color: #dcd6d5;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  color: #444444;
+}
+
+/* menu section */
+.menu {
+  background-color: #e9e3e0;
+  /* width: 400px; */
+  width: 23.5vw;
+  height: calc(100vh - 100px);
+  margin: 25px 1.5vw 25px 1.5vw;
+  border-radius: 20px;
+  padding: 25px 1.5vw 25px 1.5vw;
+  transition: all ease-in-out 0.25s;
+}
+.menu__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__title > div {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+}
+.menu__title > div > button {
+  background-color: unset;
+  padding: 0;
+  font-size: 50px;
+}
+.osv {
+  background-color: #dcd6d5 !important;
+  font-size: 18px !important;
+  padding: 5px 10px 5px 10px !important;
+  margin-top: 5px;
+}
+.menu__search {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.menu__result {
+  position: absolute;
+  top: 65%;
+  width: 100%;
+  padding: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #dcd6d5;
+}
+
+.menu__result p {
+  position: relative;
+  margin: 0;
+  padding: 10px 0 10px 10px;
+  cursor: pointer;
+  height: 35px;
+}
+.menu__result p:hover {
+  background-color: #cfcece;
+}
+
+.menu__result > p > span {
+  position: absolute;
+  font-size: 13px;
+  left: 85%;
+  top: 15%;
+}
+
+.timeline__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+}
+.timeline__div > div {
+  display: flex;
+  align-items: center;
+  width: 32%;
+}
+.timeline__div > div > img {
+  width: 15px;
+}
+.timeline__div > div > span {
+  margin-left: 15px;
+  white-space: nowrap;
+}
+.timeline__div > span {
+  background-color: #dcd6d5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all ease-in-out 0.15s;
+}
+
+.timeline__div:hover {
+  background-color: #dcd6d5;
+}
+.timeline__div:hover > span {
+  background-color: #e9e3e0 !important;
+}
+
+.timeline__div--selected {
+  background-color: #dcd6d5;
+}
+.timeline__span--selected {
+  background-color: #e9e3e0 !important;
+}
+
+/* main */
+.main {
+  position: relative;
+  display: inline;
+  margin: 0 1.5vw 0 0;
+  padding: 25px 1.5vw 25px 1.5vw;
+  width: 66vw;
+  transition: width ease-in-out 0.25s;
+}
+
+.main__title {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-around;
+}
+.main__title > h1 {
+  font-size: 5vw;
+}
+
+.main__addTask {
+  display: flex;
+  align-items: center;
+  background-color: unset;
+  border: #cfcece solid 1px;
+  background-color: whitesmoke;
+  z-index: 2;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+}
+.main__addTask > span {
+  font-size: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.actions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  z-index: 1;
+  margin-left: 2px;
+  top: 180px;
+
+  transition: all ease-in-out 0.25s;
+}
+
+.actions-active {
+  top: 220px;
+}
+
+.actions img {
+  height: 20px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+.actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  /* background-color: unset; */
+}
+
+.main__allTasks {
+  height: 69vh;
+  overflow-x: scroll;
+  margin-top: 25px;
+}
+
+.main__task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: #cfcece solid 1px;
+}
+.main__task > img {
+  width: 25px;
+  cursor: pointer;
+}
+.main__task > div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+}
+.main__task > div > span {
+  margin-left: 25px;
+}
+.main__task > div > input {
+  width: unset;
+}
+.main__task > div > input[type="checkbox"] {
+  width: 20px;
+  cursor: pointer;
+}
+
+/* edit */
+.edit {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #e9e3e0;
+  width: 20vw;
+  height: calc(100vh - 100px);
+  margin: 25px 1.5vw 25px 1.5vw;
+  border-radius: 20px;
+  padding: 25px 1.5vw 25px 1.5vw;
+}
+
+.edit__title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit__title img {
+  width: 25px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.edit__input {
+  margin-top: 50px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+.edit__input > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+}
+.edit__input input {
+  height: 50px;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: calc(100% - 60px);
+}
+.edit__input textarea {
+  padding: 30px;
+  width: calc(100% - 60px);
+}
+
+.err {
+  background-color: lightcoral;
+  color: darkred;
+  opacity: 0;
+  width: fit-content;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: opacity ease-in-out 0.15s;
+}
+.err-active {
+  opacity: 100%;
+}
+
+.edit__controls {
+  display: grid;
+  margin: 0;
+}
+
+.edit__controls button {
+  padding: 15px 30px 15px 30px;
+  padding: 1vw 1.5vw 1vw 1.5vw;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #e9e3e0;
+  background-color: #f18202;
+}
+.edit__controls button:nth-child(2) {
+  background-color: red;
+}
+.edit__controls button:nth-child(1) {
+  background-color: green;
+}
+.stickyNotes {
+  display: flex;
+  flex-wrap: wrap;
+}
+.stickyNotes > div {
+  background-color: #f3cf34;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  /* padding: 5px; */
+  border: #f3cf34 5px solid;
+  font-size: 10px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all ease-in-out 0.25s;
+}
+
+.stickyNotes--addNew {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  background-color: whitesmoke !important;
+  color: whitesmoke;
+  padding: 5px;
+  border: #f3cf34 5px solid;
+  border-style: dashed !important;
+}
+.stickyNotes--addNew > img {
+  width: 75px;
+}
+
+.stickyNotes--base {
+  display: none;
+  background-color: #f3cf34;
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  /* padding: 5px; */
+  border: #f3cf34 5px solid;
+  font-size: 10px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transform: scale(0);
+  transition: all ease-in-out 0.5s;
+}
+
+.stickyNotes--active {
+  transform: scale(1);
+  position: absolute;
+  z-index: 100;
+  width: 68vw !important;
+  height: 925px !important;
+  top: calc(50% - 475px);
+  left: 0;
+  font-size: 28px !important;
+}
+.stickyNotes--base > div {
+  display: flex;
+  position: absolute;
+  left: 61vw;
+  top: 8px;
+}
+.stickyNotes--base > div > img {
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+}
+.stickyNotes--base > textarea {
+  background-color: unset;
+  width: 100%;
+  height: 100%;
+}
+
+/* .......... */
+
+.main--active {
+  width: 42vw !important;
+}
+.main--active-2 {
+  width: 87vw !important;
+}
+.main--active-3 {
+  width: 62.5vw !important;
+}
+
+.menu--active {
+  width: 2.5vw;
+}
+.menu--active h2,
+.menu--active .menu__search,
+.menu--active .osv {
+  display: none;
+}
+.menu--active .timeline span {
+  display: none;
+}
+
+.menu--active .timeline > div > div > img {
+  width: 25px;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .menu {
+    width: 40vw;
+    height: calc(100dvh - 100px) !important;
+  }
+  .menu--active {
+    width: 12vw;
+  }
+  .menu__title {
+    flex-direction: column;
+  }
+  .menu__title > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .menu__title > div > button {
+    background-color: unset;
+    padding: 0;
+    font-size: 50px;
+  }
+  .osv {
+    background-color: #dcd6d5 !important;
+    font-size: 12px !important;
+    padding: 5px 10px 5px 10px !important;
+    width: 75%;
+    margin-top: 5px;
+  }
+
+  .main {
+    width: 50vw;
+    height: calc(100dvh - 100px) !important;
+  }
+
+  .main--active {
+    width: 0vw !important;
+    visibility: hidden;
+  }
+  .main--active-2 {
+    width: 80vw !important;
+  }
+  .main--active-3 {
+    width: 0vw !important;
+    visibility: hidden;
+  }
+
+  .main__title {
+    /* .... */
+    height: 150px;
+  }
+  .main__title > h1 {
+    /* .... */
+    font-size: 10vw;
+  }
+
+  .actions {
+    /* .... */
+    top: 100px;
+    width: 92%;
+  }
+  .actions-active {
+    top: 170px;
+    /* .... */
+  }
+
+  .actions img {
+    /* .... */
+    height: 14px;
+  }
+  .actions button {
+    /* .... */
+    padding: 3px;
+    margin-right: 5px;
+    font-size: 10px;
+  }
+
+  .actions > span {
+    /* .... */
+    font-size: 10px;
+  }
+
+  .main__task {
+    /* .... */
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .main__task > div:nth-child(1) {
+    /* .... */
+    width: 100%;
+    justify-content: space-between;
+  }
+  .main__task > div:nth-child(2) {
+    /* .... */
+    width: 100%;
+    justify-content: space-between;
+  }
+  .main__task > div:nth-child(1) > span {
+    /* .... */
+    width: 100%;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .main__task > div:nth-child(2) > span {
+    /* .... */
+    margin: 0;
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .timeline__div > div > span {
+    font-size: 14px !important;
+  }
+  .timeline__div > span {
+    font-size: 12px !important;
+  }
+
+  .menu__result p {
+    font-size: 14px;
+  }
+
+  .menu__result > p > span {
+    left: 70%;
+  }
+
+  /* /////////////////////////////////// */
+
+  .edit {
+    /* .... */
+    width: 70vw;
+    z-index: 100;
+    visibility: visible;
+    height: calc(100dvh - 100px) !important;
+  }
+
+  .main--active .edit {
+    width: 45vw;
+  }
+
+  .edit__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .edit__title img {
+    width: 25px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  .edit__input {
+    margin-top: 50px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .edit__input > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+  }
+  .edit__input input {
+    height: 50px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: calc(100% - 60px);
+  }
+  .edit__input textarea {
+    padding: 30px;
+    width: calc(100% - 60px);
+  }
+
+  .err {
+    background-color: lightcoral;
+    color: darkred;
+    opacity: 0;
+    width: fit-content;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: opacity ease-in-out 0.15s;
+  }
+  .err-active {
+    opacity: 100%;
+  }
+
+  .edit__controls {
+    display: grid;
+    margin: 0;
+  }
+
+  .edit__controls button {
+    padding: 15px 30px 15px 30px;
+    padding: 1vw 1.5vw 1vw 1.5vw;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #e9e3e0;
+    background-color: #f18202;
+  }
+  .edit__controls button:nth-child(2) {
+    background-color: red;
+  }
+  .edit__controls button:nth-child(1) {
+    background-color: green;
+  }
+
+  /* ///////////////// */
+
+  .stickyNotes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .stickyNotes > div {
+    background-color: #f3cf34;
+    border-radius: 10px;
+    /* padding: 5px; */
+    border: #f3cf34 5px solid;
+    font-size: 10px;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all ease-in-out 0.25s;
+
+    /* ...... */
+    height: 60px;
+    width: 60px;
+  }
+
+  .stickyNotes--addNew {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    background-color: whitesmoke !important;
+    color: whitesmoke;
+    padding: 5px;
+    border: #f3cf34 5px solid;
+    border-style: dashed !important;
+  }
+  .stickyNotes--addNew > img {
+    /* ...... */
+    width: 30px;
+  }
+
+  .stickyNotes--base {
+    display: none;
+    background-color: #f3cf34;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    /* padding: 5px; */
+    border: #f3cf34 5px solid;
+    font-size: 10px;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(0);
+    transition: all ease-in-out 0.5s;
+  }
+
+  .stickyNotes--active {
+    transform: scale(1);
+    position: absolute;
+    z-index: 100;
+    width: 68vw !important;
+    height: 925px !important;
+    left: 0;
+    font-size: 28px !important;
+
+    /* ...... */
+    top: 2.5%;
+    width: 75vw !important;
+    height: 90dvh !important;
+  }
+  .stickyNotes--base > div {
+    display: flex;
+    position: absolute;
+    left: 61vw;
+    top: 8px;
+    /* ...... */
+    margin-left: -50px;
+  }
+  .stickyNotes--base > div > img {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+  }
+  .stickyNotes--base > textarea {
+    background-color: unset;
+    width: 100%;
+    height: 100%;
+  }
+}
