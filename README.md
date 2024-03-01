@@ -1,52 +1,21 @@
-# Todo App
+# Todo App Repository
 
-This project aims to build a to do list application by applying HTML, CSS and Javascript.  The application allows users to manage their tasks effectively.
+This repository contains the code for a Todo App. The application is developed using HTML, CSS, and Javascript, allowing users to manage their tasks effectively.
 
-## Level 1: Todo App Basic Requirements
+## Section 1:
 
-In this level, the application includes the following features:
+1. **Adding a Todo**: Users can enter a new todo item in an input field and add it to the list by clicking an "Add" button.
+2. **Rendering Todo List**: The list of todos is displayed on the screen, with each todo item showing a checkbox and the task description.
+3. **Deleting a Todo**: Each todo item has a "Delete" button. When clicked, the corresponding todo item is removed from the list.
 
-1. Adding a Todo:
-   - Display an input field where users can enter a new todo item.
-   - Include an "Add" button to add the entered todo item to the list.
+## Section 2: 
 
-2. Rendering Todo List:
-   - Render the list of todos on the screen.
-   - Each todo item should display a checkbox and the task description.
+1. **Editing a Todo**: Each todo item has an "Edit" button. When clicked, users can update the task description of the corresponding todo.
+2. **Todo Counter**: The app includes a counter that displays the total number of todo items.
 
-3. Deleting a Todo:
-   - Implement a "Delete" button next to each todo item.
-   - When the button is clicked, remove the corresponding todo item from the list.
+## Section 3:
 
-## Level 2: Todo App Additional Requirements
+1. **Persistent Storage**: The app has the ability to persist todo items using local storage, ensuring that the list remains intact even after the page is refreshed.
+2. **Search Functionality**: The app includes a search functionality that allows users to search for specific todo items based on keywords.
+3. **Peer Review**: Participants can review the code and implementation of 2 assignments from other participants and provide constructive feedback and suggestions for improvement.
 
-In addition to the basic requirements, the application enhances its functionality with the following features:
-
-1. Editing a Todo:
-   - Implement an "Edit" button next to each todo item.
-   - When the button is clicked, allow users to update the task description of the corresponding todo.
-
-2. Todo Counter:
-   - Include a counter that displays the total number of todo items.
-
-
-## Level 3: Todo App Bonus Requirements (Optional)
-
-If you have a higher skill level and finish the previous requirements before the deadline, you can tackle the following bonus tasks:
-
-1. Persistent Storage:
-   - Add the ability to persist todo items using local storage.
-   - Ensure that the list remains intact even after the page is refreshed.
-
-2. Search Functionality:
-   - Implement a search functionality that allows users to search for specific todo items based on keywords.
-
-3. Peer Review:
-   - Review the code and implementation of 2 assignments from other participants.
-   - Provide constructive feedback and suggestions for improvement.
-
-`Please note that the bonus requirements and reviews are optional and can be completed if you have additional time and advanced skills.`
-
-### Deadline : 27-02-2024 
-
-Happy coding!
